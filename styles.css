@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+.clear-delete-neg-exp {
+  display: flex;
+}
