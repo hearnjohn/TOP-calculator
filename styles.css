@@ -8,12 +8,54 @@ body {
   flex-direction: column;
   align-self: center;
   justify-self: center;
+  height: 600px;
+  width: 400px;
+  background-color: rgb(173, 173, 173);
+  border-radius: 12px;
+  border: 2px solid black;
+}
+
+.screen {
+  height: 116px;
+  width: 350px;
+  background-color: lightgray;
+  align-self: center;
+  border-radius: 8px;
+  border: 2px solid black;
+  margin-top: 20px;
 }
 
 ul {
   list-style: none;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+
+#clear,
+#delete,
+#plus-minus,
+#exponent {
+  height: 42px;
+  width: 84px;
+  border-radius: 4px;
+}
+
+.digits-ops button {
+  height: 72px;
+  width: 84px;
+  border-radius: 4px;
+}
+
+button {
+  border: 2px solid black;
+}
+
+#plus #equal #zero #decimal {
+  margin-bottom: 20px;
 }
 .clear-delete-neg-exp {
-  display: flex;
+  height: 70px;
+  margin-top: 16px;
 }
