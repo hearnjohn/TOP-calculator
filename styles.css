@@ -40,16 +40,20 @@ ul {
   height: 42px;
   width: 84px;
   border-radius: 4px;
+  font-size: 16px;
 }
 
 .digits-ops button {
   height: 72px;
   width: 84px;
   border-radius: 4px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 button {
   border: 2px solid black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #plus #equal #zero #decimal {
