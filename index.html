@@ -13,7 +13,7 @@
           <li><button id="clear">CLEAR</button></li>
           <li><button id="delete" onclick="deleteChar()">DELETE</button></li>
           <li><button id="plus-minus">+/-</button></li>
-          <li><button id="exponent">EXP</button></li>
+          <li><button id="exponent" onclick="addChar('^')">EXP</button></li>
         </ul>
       </div>
       <div class="digits-ops">
@@ -36,7 +36,7 @@
           <li><button id="minus" onclick="addChar('-')">-</button></li>
         </ul>
         <ul>
-          <li><button id="decimal">.</button></li>
+          <li><button id="decimal" onclick="addChar(this.id)">.</button></li>
           <li><button id="0" onclick="addChar(this.id)">0</button></li>
           <li><button id="equal">=</button></li>
           <li><button id="plus" onclick="addChar('+')">+</button></li>
