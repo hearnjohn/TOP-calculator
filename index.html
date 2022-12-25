@@ -11,35 +11,35 @@
       <div class="clear-delete-neg-exp">
         <ul>
           <li><button id="clear">CLEAR</button></li>
-          <li><button id="delete" onclick="deleteDigit()">DELETE</button></li>
+          <li><button id="delete" onclick="deleteChar()">DELETE</button></li>
           <li><button id="plus-minus">+/-</button></li>
           <li><button id="exponent">EXP</button></li>
         </ul>
       </div>
       <div class="digits-ops">
         <ul>
-          <li><button id="7" onclick="addNumber(this.id)">7</button></li>
-          <li><button id="8" onclick="addNumber(this.id)">8</button></li>
-          <li><button id="9" onclick="addNumber(this.id)">9</button></li>
-          <li><button id="division">÷</button></li>
+          <li><button id="7" onclick="addChar(this.id)">7</button></li>
+          <li><button id="8" onclick="addChar(this.id)">8</button></li>
+          <li><button id="9" onclick="addChar(this.id)">9</button></li>
+          <li><button id="division" onclick="addChar('÷')">÷</button></li>
         </ul>
         <ul>
-          <li><button id="4" onclick="addNumber(this.id)">4</button></li>
-          <li><button id="5" onclick="addNumber(this.id)">5</button></li>
-          <li><button id="6" onclick="addNumber(this.id)">6</button></li>
-          <li><button id="mult">×</button></li>
+          <li><button id="4" onclick="addChar(this.id)">4</button></li>
+          <li><button id="5" onclick="addChar(this.id)">5</button></li>
+          <li><button id="6" onclick="addChar(this.id)">6</button></li>
+          <li><button id="mult" onclick="addChar('×')">×</button></li>
         </ul>
         <ul>
-          <li><button id="1" onclick="addNumber(this.id)">1</button></li>
-          <li><button id="2" onclick="addNumber(this.id)">2</button></li>
-          <li><button id="3" onclick="addNumber(this.id)">3</button></li>
-          <li><button id="minus">-</button></li>
+          <li><button id="1" onclick="addChar(this.id)">1</button></li>
+          <li><button id="2" onclick="addChar(this.id)">2</button></li>
+          <li><button id="3" onclick="addChar(this.id)">3</button></li>
+          <li><button id="minus" onclick="addChar('-')">-</button></li>
         </ul>
         <ul>
           <li><button id="decimal">.</button></li>
-          <li><button id="0" onclick="addNumber(this.id)">0</button></li>
+          <li><button id="0" onclick="addChar(this.id)">0</button></li>
           <li><button id="equal">=</button></li>
-          <li><button id="plus">+</button></li>
+          <li><button id="plus" onclick="addChar('+')">+</button></li>
         </ul>
       </div>
     </div>
