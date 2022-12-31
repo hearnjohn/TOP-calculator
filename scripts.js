@@ -38,6 +38,7 @@ function processInput() {
     }
     while (hasOperator("×")) {
       operate("×");
+      break;
     }
     while (hasOperator("÷")) {
       operate("÷");
@@ -48,6 +49,7 @@ function processInput() {
     while (hasOperator("-")) {
       operate("-");
     }
+    break;
   }
 }
 
@@ -62,27 +64,72 @@ function operate(operator) {
   }
   if (opInd == strLen) return; // Case where there is no operator of interest present
 
-  let leftP = opInd - 1,
-    rightP = opInd + 1;
+  let left = findNum(opInd, "left");
+  let right = findNum(opInd, "right");
+  console.log(left, right);
 
-  while (
-    leftP >= 0 &&
-    (displayString[leftP] !== "+" ||
-      displayString[leftP] !== "-" ||
-      displayString[leftP] !== "×" ||
-      displayString[leftP] !== "÷")
-  ) {
-    --leftP;
+  // Need to remove start to finish of substring and replace with the result.
+  // Build the new string!
+  let newString = "";
+  newString += displayString.slice(0, left.leftP);
+  // console.log(newString);
+
+  // Add evaluated bit
+  let leftNum = parseFloat(left.num);
+  let rightNum = parseFloat(right.num);
+  let result = 0;
+  if (operator === "^") {
+    result = Math.pow(leftNum, rightNum);
+  } else if (operator === "×") {
+    result = leftNum * rightNum;
+    newString += String(result);
+  } else if (operator === "÷") {
+    result = leftNum / rightNum;
+    newString += String(result);
+  } else if (operator === "+") {
+    result = leftNum + rightNum;
+    newString += String(result);
+  } else {
+    result = leftNum - rightNum;
+    newString += String(result);
   }
 
-  while (
-    rightP < strLen &&
-    (displayString[rightP] !== "+" ||
-      displayString[rightP] !== "-" ||
-      displayString[rightP] !== "×" ||
-      displayString[rightP] !== "÷")
-  ) {
-    ++rightP;
+  // Add rest of displayString
+  newString += displayString.slice(right.rightP);
+  console.log(newString);
+}
+
+function findNum(index, direction) {
+  let strLen = displayString.length;
+  var leftP, rightP, num;
+  if (direction === "right") {
+    leftP = index + 1;
+    rightP = leftP;
+    while (
+      rightP < strLen &&
+      (displayString[rightP] !== "+" ||
+        displayString[rightP] !== "-" ||
+        displayString[rightP] !== "×" ||
+        displayString[rightP] !== "÷")
+    ) {
+      ++rightP;
+    }
+    num = displayString.slice(leftP, rightP);
+    return { num, rightP };
+  } else if (direction === "left") {
+    leftP = index - 1;
+    rightP = index;
+    while (
+      leftP > 0 &&
+      (displayString[leftP] !== "+" ||
+        displayString[leftP] !== "-" ||
+        displayString[leftP] !== "×" ||
+        displayString[leftP] !== "÷")
+    ) {
+      --leftP;
+    }
+    num = displayString.slice(leftP, rightP);
+    return { num, leftP };
   }
 }
 
