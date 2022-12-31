@@ -32,13 +32,13 @@ function processInput() {
     hasOperator("÷") ||
     hasOperator("^")
   ) {
+    console.log(displayString);
     // Follow PEMDAS
     while (hasOperator("^")) {
       operate("^");
     }
     while (hasOperator("×")) {
       operate("×");
-      break;
     }
     while (hasOperator("÷")) {
       operate("÷");
@@ -49,7 +49,6 @@ function processInput() {
     while (hasOperator("-")) {
       operate("-");
     }
-    break;
   }
 }
 
@@ -80,6 +79,7 @@ function operate(operator) {
   let result = 0;
   if (operator === "^") {
     result = Math.pow(leftNum, rightNum);
+    newString += String(result);
   } else if (operator === "×") {
     result = leftNum * rightNum;
     newString += String(result);
@@ -95,8 +95,9 @@ function operate(operator) {
   }
 
   // Add rest of displayString
+  console.log(displayString.slice(right.rightP));
   newString += displayString.slice(right.rightP);
-  console.log(newString);
+  displayString = newString;
 }
 
 function findNum(index, direction) {
@@ -107,10 +108,10 @@ function findNum(index, direction) {
     rightP = leftP;
     while (
       rightP < strLen &&
-      (displayString[rightP] !== "+" ||
-        displayString[rightP] !== "-" ||
-        displayString[rightP] !== "×" ||
-        displayString[rightP] !== "÷")
+      displayString[rightP] !== "+" &&
+      displayString[rightP] !== "-" &&
+      displayString[rightP] !== "×" &&
+      displayString[rightP] !== "÷"
     ) {
       ++rightP;
     }
@@ -121,10 +122,10 @@ function findNum(index, direction) {
     rightP = index;
     while (
       leftP > 0 &&
-      (displayString[leftP] !== "+" ||
-        displayString[leftP] !== "-" ||
-        displayString[leftP] !== "×" ||
-        displayString[leftP] !== "÷")
+      displayString[leftP] !== "+" &&
+      displayString[leftP] !== "-" &&
+      displayString[leftP] !== "×" &&
+      displayString[leftP] !== "÷"
     ) {
       --leftP;
     }
@@ -139,4 +140,8 @@ function hasOperator(operator) {
     if (displayString[i] === operator) return true;
   }
   return false;
+}
+
+function clearInput() {
+  displayString = "";
 }

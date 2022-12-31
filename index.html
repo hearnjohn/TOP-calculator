@@ -10,7 +10,7 @@
       <div class="screen"></div>
       <div class="clear-delete-neg-exp">
         <ul>
-          <li><button id="clear">CLEAR</button></li>
+          <li><button id="clear" onclick="clearInput()">CLEAR</button></li>
           <li><button id="delete" onclick="deleteChar()">DELETE</button></li>
           <li><button id="plus-minus">+/-</button></li>
           <li><button id="exponent" onclick="addChar('^')">EXP</button></li>
@@ -36,7 +36,7 @@
           <li><button id="minus" onclick="addChar('-')">-</button></li>
         </ul>
         <ul>
-          <li><button id="decimal" onclick="addChar(this.id)">.</button></li>
+          <li><button id="decimal" onclick="addChar('.')">.</button></li>
           <li><button id="0" onclick="addChar(this.id)">0</button></li>
           <li><button id="equal" onclick="processInput()">=</button></li>
           <li><button id="plus" onclick="addChar('+')">+</button></li>
