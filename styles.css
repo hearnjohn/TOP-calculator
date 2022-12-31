@@ -15,7 +15,7 @@ body {
   border: 2px solid black;
 }
 
-.screen {
+#screen {
   height: 116px;
   width: 350px;
   background-color: lightgray;
@@ -23,6 +23,10 @@ body {
   border-radius: 8px;
   border: 2px solid black;
   margin-top: 20px;
+  font-size: 36px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: right;
+  padding: 0;
 }
 
 ul {
@@ -62,4 +66,8 @@ button {
 .clear-delete-neg-exp {
   height: 70px;
   margin-top: 16px;
+}
+
+#text {
+  justify-self: baseline;
 }

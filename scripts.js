@@ -15,12 +15,12 @@ function addChar(e) {
     }
   }
   displayString += e;
-  console.log(displayString);
+  updateScreen();
 }
 
 function deleteChar() {
   displayString = displayString.slice(0, displayString.length - 1);
-  console.log(displayString);
+  updateScreen();
 }
 
 function processInput() {
@@ -50,6 +50,7 @@ function processInput() {
       operate("-");
     }
   }
+  updateScreen();
 }
 
 function operate(operator) {
@@ -144,4 +145,9 @@ function hasOperator(operator) {
 
 function clearInput() {
   displayString = "";
+  updateScreen();
+}
+
+function updateScreen() {
+  document.getElementById("text").textContent = displayString;
 }
